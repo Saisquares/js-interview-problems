@@ -1,4 +1,4 @@
-// 1 var hoisting 
+// 1 var hoisting
 
 // age = 75
 // console.log(age) // undefined     -- bcoz we are calling before initializing an var variable
@@ -12,7 +12,6 @@
 // var age = 65
 // console.log(age) //65
 
-
 // Lets check it with let
 
 // console.log(age)     // getting ReferenceError: Cannot access 'age' before initialization
@@ -25,7 +24,7 @@
 // console.log(age)
 
 // functions hoisting
-// when memory allocation phase whole function body is assigned it is availabale entire js page 
+// when memory allocation phase whole function body is assigned it is availabale entire js page
 
 // foo = 30
 // console.log("FOO", foo)
@@ -35,7 +34,6 @@
 // foo - undefined
 // foo - 30
 // foo - 100
-
 
 // for(var i = 0; i < 10; i++){
 //     setTimeout(() => console.log(i), 0)
@@ -48,7 +46,7 @@
 //     setTimeout(() => console.log(i), 0)
 // }
 //0-9
-// every execution let will create new variable 
+// every execution let will create new variable
 
 // var obj = {
 //     fullname:"saikumar",
@@ -78,3 +76,35 @@
 // darisetti
 
 // this keyword points window object in arrow function
+
+// function x() {
+//   for (var i = 1; i <= 10; i++) {
+//     function close(newvalue) {
+//       setTimeout(function () {
+//         console.log(newvalue);
+//       }, newvalue * 1000);
+//     }
+//     close(i);
+//   }
+// }
+// x();
+
+// function countDown(){
+//     for(var i = 1; i <= 10; i++){
+//         function forNewValue(counter){
+//             setTimeout(function (){
+//                 console.log(counter);
+//             }, counter * 1000)
+//         }forNewValue(i)
+//     }
+// }
+// countDown()
+
+function countDown() {
+  for (let i = 1; i <= 10; i++) {
+    setTimeout(function () {
+      console.log(i);
+    }, i * 1000);
+  }
+}
+countDown();
